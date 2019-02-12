@@ -1,0 +1,25 @@
+pip3 install virtualenv
+virtualenv .
+source bin/activate
+pip freeze
+pip install django
+Create new folder and open in terminal
+#django-admin.py startproject mysite .
+#python3 manage.py runserver
+#python3 manage.py migrate
+#python3 manage.py migrate go to /admin -url
+#python3 manage.py createsuperuser
+#sudo lsof -t -i tcp:8000 | xargs kill -9
+#python3 manage.py startapp authenticate
+#add authenticate to settings.py
+#create folder to hold app
+#create urls.py folder
+#create templates folder with html file for views
+#
+#<div class="container">
+    {% block content%}
+    {% endblock%}
+    </div>
+#
+#
+#{% csrf_token%}<!---this is to prevent hacking the form-->
