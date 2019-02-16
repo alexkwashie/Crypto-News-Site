@@ -1,23 +1,49 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
 
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-<div class= "container">
-  <h4 id="fat">@fat</h4>
-  <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <div class="container">
+    <h4 id="fat">@fat</h4>
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
   </div>
+  <div class="container">
+    <h4 id="mdo">@mdo</h4>
+    <p></p>
+    <p>
+
+
+
+      <div class="container">
+      <div class="row">
+        {% for key in api.Data %}
+        <div class="card" style="width: 18rem;">
+          <img src="{{key.imageurl}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{key.title}}</h5>
+            <p class="card-text">{{key.body}}</p>
+            <a href="{{key.url}}" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
+      {{api.Data}}
+    </p>
   </div>
-  <h4 id="mdo">@mdo</h4>
-  <p>{{ api }}</p>
-  <h4 id="one">one</h4>
-  <p>...</p>
+
+
+
+
   <h4 id="two">two</h4>
   <p>...</p>
   <h4 id="three">three</h4>
