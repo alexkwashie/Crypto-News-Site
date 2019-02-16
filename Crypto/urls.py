@@ -6,8 +6,6 @@ from django.urls import path
 urlpatterns = [
     path('', views.home, name='index'),
 ]
-
-
 '''
 urlpatterns = [
     path('home/', views.home, name='home'),
