@@ -10,7 +10,7 @@ Create new folder and open in terminal
 #python3 manage.py migrate go to /admin -url
 #python3 manage.py createsuperuser
 #sudo lsof -t -i tcp:8000 | xargs kill -9
-#python3 manage.py startapp authenticate
+#python3 manage.py startapp authenticate(where webpage sits)
 #add authenticate to settings.py
 #create folder to hold app
 #create urls.py folder
@@ -23,3 +23,5 @@ Create new folder and open in terminal
 #
 #
 #{% csrf_token%}<!---this is to prevent hacking the form-->
+#create 'static' folder to hold class
+
