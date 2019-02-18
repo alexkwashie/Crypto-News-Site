@@ -7,8 +7,14 @@
 }
 
 .jumbotron {
+    margin-top: 50px;
     background-image: url(/Users/alexkwashie/Desktop/WorkingFiles/Crypto-News-Site/Crypto/static/baan.jpeg);
     background-size: cover;
     height: 100%;
 
+}
+
+.jumbotron .lead{
+    width: 500px;
+    background-color: blanchedalmond;
 }

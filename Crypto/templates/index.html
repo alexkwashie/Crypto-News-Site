@@ -2,12 +2,19 @@
 
 {% block content %}
 
+<br><br><br><br>
+{% for key, value  in price.DISPLAY.items %}
+{{key}}
+
+{% endfor %}
+<br><br>
+
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
   <div class="container">
     <h4 id="fat">@fat</h4>
     <div class="jumbotron">
       <h1 class="display-4">Welcome to Crypto News</h1>
-      <p class="lead">Great place for crypto news and blockchain industry</p>
+      <p class="lead bur">Great place for crypto news and blockchain industry</p>
       <hr class="my-4">
       <p>See latest news and update below</p>
       <a class="btn btn-secondary btn-lg" href="https://cryptowat.ch/" target="_blank" role="button">See charts</a>
@@ -38,7 +45,7 @@
         </div>
       </div>
 
-      {{price}}
+
     </p>
   </div>
 
