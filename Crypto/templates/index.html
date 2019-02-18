@@ -6,24 +6,23 @@
   <div class="container">
     <h4 id="fat">@fat</h4>
     <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-        featured content or information.</p>
+      <h1 class="display-4">Welcome to Crypto News</h1>
+      <p class="lead">Great place for crypto news and blockchain industry</p>
       <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <p>See latest news and update below</p>
+      <a class="btn btn-secondary btn-lg" href="#" role="button">See charts</a>
     </div>
   </div>
   <div class="container">
-    <h4 id="mdo">@mdo</h4>
-    <p></p>
-    <p>
-
+    <h4 id="mdo">News & Updates</h4>
+    <br>
 
 
       <div class="container">
       <div class="row">
+
         {% for key in api.Data %}
+        <div class="col-sm">
         <div class="card" style="width: 18rem;">
           <img src="{{key.imageurl}}" class="card-img-top" alt="...">
           <div class="card-body">
@@ -32,6 +31,9 @@
             <a href="{{key.url}}" class="btn btn-primary">Go somewhere</a>
           </div>
           </div>
+          <br>
+        </div>
+
           {% endfor %}
         </div>
       </div>
