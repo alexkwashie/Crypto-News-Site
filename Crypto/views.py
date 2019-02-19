@@ -11,7 +11,7 @@ def home(request):
     api1 = json.loads(news_request.content)# convert api content to json
 
     #Retrive price data
-    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD,EUR")#get price api from site
+    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP&tsyms=USD,EUR")#get price api from site
     price_api = json.loads(price_request.content)# convert api content to json
 
     return render(request, 'index.html', {'api': api1,'price':price_api})

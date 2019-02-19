@@ -4,10 +4,12 @@
 
 <br><br><br><br>
 {% for key, value  in price.DISPLAY.items %}
-{{key}}
-
+{{key}} -  {{value.PRICE}} {{value.}}
+<br>
+<br>
+<br>
 {% endfor %}
-<br><br>
+
 
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
   <div class="container">
@@ -52,8 +54,39 @@
 
 
 
-  <h4 id="two">two</h4>
-  <p>...</p>
+  <div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+
   <h4 id="three">three</h4>
   <p>...</p>
 </div>
