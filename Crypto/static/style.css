@@ -16,5 +16,12 @@
 
 .jumbotron .lead{
     width: 500px;
-    background-color: blanchedalmond;
+
+    font-size: 100px;
+}
+
+.nbbt{
+    margin-bottom: 20px;
+    border: solid red 1px;
+    font-size: 100px;
 }

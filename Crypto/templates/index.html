@@ -3,13 +3,16 @@
 {% block content %}
 
 <br><br><br><br>
-{% for key, value  in price.DISPLAY.items %}
-{{key}} -  {{value.PRICE}} {{value.}}
+{% for key, value  in price.DISPLAY.items %} <!--items is a default function to s how items in a dictionary: outside html is written (items())-->
+{{key}} -  {{value.USD.PRICE}}
 <br>
 <br>
 <br>
-{% endfor %}
 
+{% endfor %}
+{{price.DISPLAY.BTC.USD}}
+<br>
+<br>
 
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
   <div class="container">
@@ -23,6 +26,7 @@
     </div>
   </div>
   <div class="container">
+  <br>
     <h4 id="mdo">News & Updates</h4>
     <br>
 
@@ -56,33 +60,33 @@
 
   <div class="container">
 <table class="table table-striped">
+
   <thead>
     <tr>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
+      <th scope="col">#</th>
+      <th scope="col">Coin</th>
+      <th scope="col">Price(USD)</th>
+      <th scope="col">Amt. In Supply</th>
+      <th scope="col">Mrk. Cap</th>
+      <th scope="col">Total Vol. 24H </th>
+      <th scope="col">Chg. 24H</th>
+</th>
   </thead>
-  <tbody>
+<tbody>
+  {% for key, value in price.DISPLAY.items %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{key}}</td>
+      <td>{{value.USD.PRICE}}</td>
+      <td>{{value.USD.SUPPLY}}</td>
+      <td>{{value.USD.MKTCAP}}</td>
+      <td>{{value.USD.TOTALVOLUME24H}}</td>
+      <td>{{value.USD.CHANGEPCTDAY}}%</td>
+      {%endfor%}
     </tr>
   </tbody>
+
+
 </table>
   </div>
 
