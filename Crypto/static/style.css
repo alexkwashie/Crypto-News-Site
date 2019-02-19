@@ -16,12 +16,12 @@
 
 .jumbotron .lead{
     width: 500px;
-
-    font-size: 100px;
+    background-color: blanchedalmond;
+    font-size: 20px;
 }
 
-.nbbt{
-    margin-bottom: 20px;
-    border: solid red 1px;
-    font-size: 100px;
+.navbar a img{
+    height: 35px;
+    width: 36px;
+    margin-right: 9px;
 }

@@ -2,35 +2,25 @@
 
 {% block content %}
 
-<br><br><br><br>
-{% for key, value  in price.DISPLAY.items %} <!--items is a default function to s how items in a dictionary: outside html is written (items())-->
-{{key}} -  {{value.USD.PRICE}}
-<br>
-<br>
-<br>
 
-{% endfor %}
-{{price.DISPLAY.BTC.USD}}
-<br>
-<br>
 
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
   <div class="container">
     <h4 id="fat">@fat</h4>
     <div class="jumbotron">
       <h1 class="display-4">Welcome to Crypto News</h1>
-      <p class="lead bur">Great place for crypto news and blockchain industry</p>
+      <p class="lead bur">Great source for crypto news and the blockchain industry</p>
       <hr class="my-4">
       <p>See latest news and update below</p>
       <a class="btn btn-secondary btn-lg" href="https://cryptowat.ch/" target="_blank" role="button">See charts</a>
     </div>
   </div>
-  <div class="container">
-  <br>
-    <h4 id="mdo">News & Updates</h4>
+
+  <div class="container" id="mdo">
+  <br> <br> <br> <br>
+    <h4 >News & Updates</h4>
+
     <br>
-
-
       <div class="container">
       <div class="row">
 
@@ -50,16 +40,12 @@
           {% endfor %}
         </div>
       </div>
-
-
-    </p>
   </div>
 
 
 
-
   <div class="container">
-<table class="table table-striped">
+<table class="table table-striped table-hover">
 
   <thead>
     <tr>
@@ -73,7 +59,7 @@
 </th>
   </thead>
 <tbody>
-  {% for key, value in price.DISPLAY.items %}
+  {% for key, value in price.DISPLAY.items %}<!--items is a default function to s how items in a dictionary: outside html is written (items())-->
     <tr>
       <th scope="row">{{forloop.counter}}</th>
       <td>{{key}}</td>
@@ -96,3 +82,5 @@
 </div>
 
 {% endblock %}
+
+<!--{{price.DISPLAY.BTC.USD}}-->
