@@ -2,10 +2,11 @@
 
 
 {% block content %}
+<br><br><br>
+{% for key, value in searchoutput.RAW.items %}
+{{key}} - {{value.USD}}
 
-{{search}}
-<p>Alled</p>
 
-
+{% endfor %}
 
  {% endblock%}
