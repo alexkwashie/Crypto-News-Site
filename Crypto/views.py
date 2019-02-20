@@ -26,6 +26,7 @@ def prices(request):
         import json #use json module (use pip3 to install json)
 
         search1 = request.POST['search'] #coin search from the search input
+        search1 = search1.upper() #convert any input to capital
         search_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+search1+"&tsyms=USD")
         search_output = json.loads(search_request.content)# convert api content to json
         return render(request, 'prices.html', {'search': search1, 'searchoutput': search_output})
