@@ -18,6 +18,10 @@ def home(request):
 
 
 def prices(request):
-    return render(request, 'prices.html', {})
+    if request.method == 'POST': #if it gets request.method from html
+        search1 = request.POST['search']
+        return render(request, 'prices.html', {'search': search1})
+    else:
+        return render(request, 'prices.html', {})
 
-    
+

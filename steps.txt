@@ -23,5 +23,5 @@ Create new folder and open in terminal
 #
 #
 #{% csrf_token%}<!---this is to prevent hacking the form-->
-#create 'static' folder to hold class
+#create 'static' folder to hold css
 
