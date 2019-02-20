@@ -15,3 +15,9 @@ def home(request):
     price_api = json.loads(price_request.content)# convert api content to json
 
     return render(request, 'index.html', {'api': api1,'price':price_api})
+
+
+def prices(request):
+    return render(request, 'prices.html', {})
+
+    
