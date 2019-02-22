@@ -29,7 +29,9 @@
           <img src="{{key.imageurl}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{key.title}}</h5>
-            <p class="card-text">{{key.body}}</p>
+            {% autoescape off %} <!--This removes HTML entities-->>
+      <p class="card-text">{{key.body}}</p>
+            {% endautoescape %}
             <a href="{{key.url}}" class="btn btn-primary">Go somewhere</a>
           </div>
           </div>
@@ -37,7 +39,7 @@
         </div>
 
           {% endfor %}
-  <p>{{api2}}</p>
+
 
 
 

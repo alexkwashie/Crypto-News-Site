@@ -10,6 +10,7 @@ def home(request):
 
     #Retrive news data
     news_request = requests.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN")#get news api from site
+
     api1 = json.loads(news_request.content)# convert api content to json
 
     api2 = api1['Data'][1]['body']
