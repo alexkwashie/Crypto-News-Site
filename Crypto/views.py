@@ -2,19 +2,23 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def home(request):
     import requests #use requests module(use pip3 to install json)
     import json #use json module (use pip3 to install json)
+    import html
 
     #Retrive news data
     news_request = requests.get("https://min-api.cryptocompare.com/data/v2/news/?lang=EN")#get news api from site
     api1 = json.loads(news_request.content)# convert api content to json
 
+    api2 = api1['Data'][1]['body']
+
     #Retrive price data
     price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,ETH,EOS,LTC,QTUM,ZEC,ETC&tsyms=USD,EUR")#get price api from site
     price_api = json.loads(price_request.content)# convert api content to json
 
-    return render(request, 'index.html', {'api': api1, 'price':price_api})
+    return render(request, 'index.html', {'api': api1, 'price':price_api, 'api2':api2})
 
 
 def prices(request):
@@ -32,5 +36,3 @@ def prices(request):
         return render(request, 'prices.html', {'search': search1, 'searchoutput': search_output})
     else:
         return render(request, 'prices.html', {})
-
-
