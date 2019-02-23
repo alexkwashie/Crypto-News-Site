@@ -29,8 +29,8 @@
           <img src="{{key.imageurl}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{key.title}}</h5>
-            {% autoescape off %} <!--This removes HTML entities-->>
-      <p class="card-text">{{key.body}}</p>
+            {% autoescape off %} <!--This removes HTML entities-->
+      <p class="card-text">{{key.body|truncatechars:200}}</p>
             {% endautoescape %}
             <a href="{{key.url}}" class="btn btn-primary">Go somewhere</a>
           </div>
@@ -39,10 +39,6 @@
         </div>
 
           {% endfor %}
-
-
-
-
 
         </div>
       </div>

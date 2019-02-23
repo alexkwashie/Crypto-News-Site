@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+api2 = ''
 
 def home(request):
     import requests #use requests module(use pip3 to install json)
@@ -13,10 +14,13 @@ def home(request):
 
     api1 = json.loads(news_request.content)# convert api content to json
 
-    api2 = api1['Data'][1]['body']
+    api_body = api1['Data'][1]['body']
+
+    global api2
+    api2 = api1['Data'][1]
 
     #Retrive price data
-    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,ETH,EOS,LTC,QTUM,ZEC,ETC&tsyms=USD,EUR")#get price api from site
+    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,ETH,EOS,LTC,QTUM,ZEC,ETC,BGG&tsyms=USD,EUR")#get price api from site
     price_api = json.loads(price_request.content)# convert api content to json
 
     return render(request, 'index.html', {'api': api1, 'price':price_api, 'api2':api2})
@@ -30,10 +34,12 @@ def prices(request):
         import requests #use requests module(use pip3 to install json)
         import json #use json module (use pip3 to install json)
 
+        api3 = api2
+
         search1 = request.POST['search'] #coin search from the search input
         search1 = search1.upper() #convert any input to capital
         search_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+search1+"&tsyms=USD")
         search_output = json.loads(search_request.content)# convert api content to json
-        return render(request, 'prices.html', {'search': search1, 'searchoutput': search_output})
+        return render(request, 'prices.html', {'search': search1, 'searchoutput': search_output, 'api3': api3})
     else:
         return render(request, 'prices.html', {})
