@@ -1,5 +1,12 @@
 *, body{
     width: auto;
+
+}
+
+footer{
+    background-color: rgb(236, 236, 236);
+    padding-bottom:20px;
+
 }
 
 .container{
@@ -14,10 +21,30 @@
 
 }
 
+.jumbotron{
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+    @keyframes slidein {
+    from {
+       padding-bottom: 100px;
+        width: 100%;
+    }
+
+    to {
+        padding-top: 68px;
+        width: 100%;
+    }
+
+}
+
 .jumbotron .lead{
     width: 500px;
-    background-color: blanchedalmond;
+    background-color: rgb(250, 215, 179);
     font-size: 20px;
+    border-radius: 6px;
+    padding-left: 5px;
 }
 
 .navbar a img{

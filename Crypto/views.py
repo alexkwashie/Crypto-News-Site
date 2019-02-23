@@ -20,7 +20,7 @@ def home(request):
     api2 = api1['Data'][1]
 
     #Retrive price data
-    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,ETH,EOS,LTC,QTUM,ZEC,ETC,BGG&tsyms=USD,EUR")#get price api from site
+    price_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,XRP,ETH,EOS,LTC,XMR,ZEC,ETC,REP,BSV&tsyms=USD,EUR")#get price api from site
     price_api = json.loads(price_request.content)# convert api content to json
 
     return render(request, 'index.html', {'api': api1, 'price':price_api, 'api2':api2})
