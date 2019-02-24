@@ -3,10 +3,14 @@
 
 {% block content %}
 <br><br><br>
-{% for key, value in searchoutput.RAW.items %}
-{{key}} - {{value.USD}}
+  {% for key, value in searchoutput.RAW.items %}
+<div class="jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{key}}</h1>
+    <p class="lead"> {{value.USD.TOSYMBOL}} {{value.USD.PRICE}}</p>
+  </div>
+</div>
 
 
 {% endfor %}
-{{api3}}
  {% endblock%}
