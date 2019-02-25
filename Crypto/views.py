@@ -27,6 +27,7 @@ def home(request):
 
 
 def prices(request):
+
         #this a functionality to search through the api for info. on coins on the prices.html page
 
        #Retrive price data
@@ -38,8 +39,12 @@ def prices(request):
 
         search1 = request.POST['search'] #coin search from the search input
         search1 = search1.upper() #convert any input to capital
-        search_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+search1+"&tsyms=USD")
+        search_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+search1+"&tsyms=GBP")
         search_output = json.loads(search_request.content)# convert api content to json
         return render(request, 'prices.html', {'search': search1, 'searchoutput': search_output, 'api3': api3})
+
     else:
-        return render(request, 'prices.html', {})
+        nwinfo = "ness"
+        return render(request, 'prices.html', {'notfound': nwinfo})
+
+

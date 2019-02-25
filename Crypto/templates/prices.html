@@ -2,15 +2,23 @@
 
 
 {% block content %}
-<br><br><br>
-  {% for key, value in searchoutput.RAW.items %}
-<div class="jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">{{key}}</h1>
-    <p class="lead"> {{value.USD.TOSYMBOL}} {{value.USD.PRICE}}</p>
-  </div>
-</div>
 
+<br><br><br><br>
 
-{% endfor %}
+    <h1>{{ notfound }}</h1>
+
+    {% for key, value in searchoutput.DISPLAY.items %}
+    <div class="jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">{{key}}</h1>
+        <p class="lead"> Current Price: {{value.GBP.TOSYMBOL}}£ {{value.GBP.PRICE}}</p>
+        <p class="lead"> Day High: {{value.GBP.TOSYMBOL}}£ {{value.GBP.HIGHDAY}}</p>
+        <p class="lead"> Day Low: {{value.GBP.TOSYMBOL}}£ {{value.GBP.LOWDAY}}</p>
+        <p class="lead"> Days' Volume:{{value.GBP.VOLUMEDAY}}</p>
+    </div>
+    </div>
+    {{searchoutput}}
+
+    {% endfor %}
+
  {% endblock%}
