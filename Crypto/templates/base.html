@@ -39,9 +39,10 @@
       <a class="nav-link" href="#News & Updates">News Updates</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'prices' %}">About</a>
+      <a class="nav-link" href="#">About</a>
     </li>
   </ul>
+
 
   <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'prices' %}">
       {% csrf_token%}<!---this is to prevent hacking the form-->
