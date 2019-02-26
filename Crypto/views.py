@@ -27,8 +27,7 @@ def home(request):
 
 
 def prices(request):
-
-        #this a functionality to search through the api for info. on coins on the prices.html page
+#this a functionality to search through the api for info. on coins on the prices.html page
 
        #Retrive price data
     if request.method == 'POST': #if it gets request.method from html
@@ -42,7 +41,9 @@ def prices(request):
         quote = request.POST['search']
         search_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+search1+"&tsyms=GBP")
         search_output = json.loads(search_request.content)# convert api content to json
-        return render(request, 'prices.html', {'quote': quote, 'searchoutput': search_output, 'api3': api3})
+
+
+        return render(request, 'prices.html', {'searchoutput': search_output, 'quote': quote})
 
     else:
         notfound = "Please enter crypto code in the search field to view info. eg. BTC for bitcoin or ETH for Ethereum"
