@@ -4,8 +4,14 @@
 {% block content %}
 
 <br><br><br><br>
+{% if notfound %}
+    {{ notfound }}
 
-    <h1>{{ notfound }}</h1>
+{% else %}
+
+   {% if searchoutput %}
+           {{ quote }} invalid search result
+    {% endif %}
 
     {% for key, value in searchoutput.DISPLAY.items %}
     <div class="jumbotron-fluid">
@@ -20,5 +26,5 @@
     {{searchoutput}}
 
     {% endfor %}
-
+{% endif %}
  {% endblock%}

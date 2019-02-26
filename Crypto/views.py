@@ -39,12 +39,13 @@ def prices(request):
 
         search1 = request.POST['search'] #coin search from the search input
         search1 = search1.upper() #convert any input to capital
+        quote = request.POST['search']
         search_request = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+search1+"&tsyms=GBP")
         search_output = json.loads(search_request.content)# convert api content to json
-        return render(request, 'prices.html', {'search': search1, 'searchoutput': search_output, 'api3': api3})
+        return render(request, 'prices.html', {'quote': quote, 'searchoutput': search_output, 'api3': api3})
 
     else:
-        nwinfo = "ness"
-        return render(request, 'prices.html', {'notfound': nwinfo})
+        notfound = "Please enter crypto code in the search field to view info. eg. BTC for bitcoin or ETH for Ethereum"
+        return render(request, 'prices.html', {'notfound': notfound})
 
 
