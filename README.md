@@ -15,6 +15,7 @@ To view this web application, you will need to:
 - Pyhton
 - Django
 - Virtualenv
+- Bootstrap 4
 
 
 ## Author
