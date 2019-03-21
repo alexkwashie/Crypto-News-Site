@@ -23,7 +23,7 @@ footer{
 
 
 .jumbotron .lead{
-    width: 500px;
+    width: 50%;
     background-color: rgb(250, 215, 179);
     font-size: 20px;
     border-radius: 6px;
@@ -34,4 +34,10 @@ footer{
     height: 35px;
     width: 36px;
     margin-right: 9px;
+}
+
+@media screen  and (max-width: 480px) {
+
+    .jumbotron .lead{
+        width: 100%;}
 }
