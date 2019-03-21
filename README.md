@@ -8,7 +8,7 @@ To view this web application, you will need to:
 2. Open the folder in terminal
 3. Create a virtual enviroment(Prefereably Virtualenv). See link - https://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv/
 4. Install Python3, Django, and python Request module (see link - http://docs.python-requests.org/en/master/user/install/) in the virtual environment
-5. Run python3 manage.py runserver to view file in yoiu localhost :+1:
+5. Run python3 manage.py runserver to view file in yoiu localhost :smile:
 
 
 ## Built With
