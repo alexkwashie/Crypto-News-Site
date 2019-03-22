@@ -36,6 +36,11 @@ footer{
     margin-right: 9px;
 }
 
+.error{
+    
+    border-radius: 6px;
+}
+
 @media screen  and (max-width: 480px) {
 
     .jumbotron .lead{

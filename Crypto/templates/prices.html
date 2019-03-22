@@ -5,14 +5,16 @@
 
 <br><br><br><br>
 <div class="container">
-{% if notfound %}
-    {{ notfound }}
+{% if  notfound1 %}
 
-{% else %}
- {{ quote }} is an invalid search result. Please enter crypto code eg. BTC
+{{ notfound1 }}
+{% else  %}
 
+{% if searchoutput.Response%}
+<h2 style="background: pink; border-radius: 6px; padding:2%;">{{quote}} is invalid, Please enter a Cryptocurrency shortcode. Eg. BTC -> Bitcoin</h2>
+{% endif %}
 
-    {% for key, value in searchoutput.DISPLAY.items %}
+{% for key, value in searchoutput.DISPLAY.items %}
     <div class="jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">{{key}}</h1>
@@ -22,9 +24,8 @@
         <p class="lead"> Days' Volume:{{value.GBP.VOLUMEDAY}}</p>
     </div>
     </div>
+  {% endfor %}
 
-
-    {% endfor %}
 {% endif %}
 
  {% endblock%}
