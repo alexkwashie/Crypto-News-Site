@@ -1,6 +1,6 @@
 # Crypto-News-Site
 This a simple Django Web Application that shows cryptocurrency News and update on current cryptocurrency 
-market prices. The Dynamic information on the webpage is sourced through an API from the Cryptocompare website.
+market prices. The Dynamic information on the webpage is sourced via an API from cryptocompare.com
 
 ## Prerequisites
 To view this web application, you will need to:
